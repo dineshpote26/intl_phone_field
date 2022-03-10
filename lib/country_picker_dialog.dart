@@ -119,11 +119,17 @@ class _CountryPickerDialogState extends State<CountryPickerDialog> {
                 itemBuilder: (ctx, index) => Column(
                   children: <Widget>[
                     ListTile(
-                      leading: Image.asset(
+                      leading: Container(
+                         height:32,
+                         width:32, 
+                        decoration: BoxDecoration(
+  borderRadius: BorderRadius.circular(32)
+),
+                        child: Image.asset(
                         'assets/flags/${_filteredCountries[index].code.toLowerCase()}.png',
                         package: 'intl_phone_field',
                         width: 32,
-                      ),
+                      )),
                       contentPadding: widget.style?.listTilePadding,
                       title: Text(
                         _filteredCountries[index].name,
